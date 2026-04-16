@@ -121,7 +121,7 @@ gridview {
 
 		box {
 			//cells
-			border-spacing: $space-size + 2px; //label separation
+			padding: 0 $space-size + 2px; //label separation
 			//margin: $space-size * 2;
 			margin: 0;
 		}
@@ -309,7 +309,7 @@ entry {
 	& {
 		min-height: $medium-size;
 		padding: 0 8px;
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 		border-radius: $corner-radius;
 		caret-color: currentColor; // this shouldn't be needed.
 
@@ -727,7 +727,7 @@ button {
 
 		> box,
 		> box > box {
-			border-spacing: $space-size - 2px;
+			padding: 0 $space-size - 2px;
 
 			> label {
 				padding-left: 2px;
@@ -765,7 +765,7 @@ button {
 		padding-right: $space-size * 1.5;
 
 		> box {
-			border-spacing: $space-size - 2px;
+			padding: 0 $space-size - 2px;
 		}
 
 		&.text-button {
@@ -773,7 +773,7 @@ button {
 			padding-right: $space-size * 2 + 4px;
 
 			> box {
-				border-spacing: $space-size;
+				padding: 0 $space-size;
 			}
 		}
 	}
@@ -997,7 +997,7 @@ button {
 		}
 
 		> box {
-			border-spacing: $space-size;
+			padding: 0 $space-size;
 		}
 		> box > box > label {
 			font-weight: bold;
@@ -1128,7 +1128,7 @@ splitbutton {
 		padding-right: $space-size * 1.5;
 
 		> box {
-			border-spacing: $space-size;
+			padding: 0 $space-size;
 		}
 	}
 
@@ -1220,7 +1220,7 @@ splitbutton {
 }
 
 buttoncontent {
-	border-spacing: $space-size;
+	padding: 0 $space-size;
 
 	> label {
 		font-weight: bold;
@@ -1369,7 +1369,7 @@ button.link {
 spinbutton {
 	border-radius: $modal-radius;
 	padding: 0;
-	border-spacing: 0;
+	padding: 0;
 	@include entry(normal);
 
 	&:focus-within {
@@ -1480,7 +1480,7 @@ dropdown {
 	}
 
 	> button > box {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 
 		> stack > row.activatable {
 			&:hover,
@@ -1544,7 +1544,7 @@ combobox {
 .toolbar {
 	padding: $space-size;
 	/* background-color: $background; */
-	border-spacing: $space-size;
+	padding: 0 $space-size;
 
 	button {
 		@extend %button-flat;
@@ -1651,7 +1651,6 @@ combobox {
 // searchbar
 searchbar > revealer > box {
 	padding: $space-size;
-	border-spacing: 0;
 	border-style: solid;
 	border-width: 0 0 1px;
 	border-color: $divider;
@@ -1828,7 +1827,7 @@ headerbar {
 		&,
 		> box.start,
 		> box.end {
-			border-spacing: $space-size;
+			padding: 0 $space-size;
 		}
 	}
 
@@ -3166,7 +3165,7 @@ tabthumbnail {
 	}
 
 	.icon-title-box {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 	}
 
 	.tab-unpin-icon {
@@ -3394,7 +3393,7 @@ switch {
 checkbutton,
 radiobutton {
 	outline: none;
-	border-spacing: $space-size / 2;
+	padding: 0 $space-size / 2;
 }
 
 check,
@@ -4002,7 +4001,6 @@ actionbar {
 
 	> revealer > box {
 		padding: $space-size;
-		border-spacing: $space-size;
 		box-shadow: none;
 		/* background-color: $base; */
 		background-color: if($variant == 'light', rgba($white, 0.4), $fill);
@@ -4315,7 +4313,7 @@ row {
 		}
 
 		& > box {
-			border-spacing: $space-size * 2;
+			padding: 0 $space-size * 2;
 		}
 	}
 }
@@ -4330,7 +4328,7 @@ row {
 	> box.header {
 		margin-left: $space-size * 2;
 		margin-right: $space-size * 2;
-		border-spacing: $space-size;
+		padding: $space-size;
 		min-height: 50px;
 
 		> .icon:disabled {
@@ -4340,7 +4338,6 @@ row {
 		> box.title {
 			margin-top: $space-size;
 			margin-bottom: $space-size;
-			border-spacing: $space-size / 2;
 			padding: 0;
 
 			// Specificity bump for header bar
@@ -4354,7 +4351,7 @@ row {
 
 		> .prefixes,
 		> .suffixes {
-			border-spacing: $space-size;
+			padding: 0 $space-size;
 		}
 
 		> .icon,
@@ -4431,7 +4428,7 @@ row.spin {
 
 	spinbutton {
 		background: none;
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 		box-shadow: none;
 
 		&,
@@ -4696,7 +4693,7 @@ columnview {
 }
 
 treeexpander {
-	border-spacing: $space-size;
+	padding: 0 $space-size;
 }
 
 columnview {
@@ -4722,7 +4719,6 @@ columnview {
 .app-notification {
 	@extend %toolbar_osd;
 	margin: $space-size;
-	border-spacing: 0;
 	padding: 0;
 	border: none;
 	background-image: none;
@@ -4902,7 +4898,6 @@ window.dialog.message {
 
 	.dialog-action-area {
 		padding: $space-size * 3;
-		border-spacing: $space-size * 3;
 
 		> button {
 			@extend %button-flat;
@@ -4953,11 +4948,10 @@ window.messagedialog {
 
 	.message-area {
 		padding: 24px 30px;
-		border-spacing: 10px;
 	}
 
 	.response-area {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 
 		button {
 			@extend %button-flat;
@@ -5189,7 +5183,7 @@ filechooser {
 }
 
 filechooserbutton > button > box {
-	border-spacing: $space-size;
+	padding: $space-size;
 }
 
 filechooserbutton:drop(active) {
@@ -5282,7 +5276,7 @@ placesview {
 
 	// this selects the "connect to server" label
 	> actionbar > revealer > box > label {
-		border-spacing: $space-size;
+		padding: $space-size;
 	}
 }
 
@@ -5373,7 +5367,7 @@ video {
 infobar {
 	> revealer > box {
 		padding: $space-size;
-		border-spacing: $space-size * 2;
+		padding: 0 $space-size * 2;
 		border-bottom: 1px solid $border;
 		box-shadow: none;
 	}
@@ -5511,7 +5505,7 @@ tooltip {
 	border: none;
 
 	> box {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 	}
 }
 
@@ -5898,7 +5892,7 @@ window {
 $window-space: $space-size * 1.5;
 
 windowcontrols {
-	border-spacing: $space-size;
+	padding: 0 $space-size;
 
 	&:not(.empty) {
 		&.start:dir(ltr),
@@ -5969,11 +5963,11 @@ shortcuts-section {
 
 .shortcuts-search-results {
 	margin: 20px;
-	border-spacing: 24px;
+	padding: 0 24px;
 }
 
 shortcut {
-	border-spacing: 6px;
+	padding: 0 6px;
 }
 
 shortcut > .keycap {
@@ -6088,7 +6082,6 @@ popover.emoji-picker {
 
 .emoji-searchbar {
 	padding: $space-size;
-	border-spacing: $space-size;
 	border-bottom: 1px solid $divider;
 	background: none;
 
@@ -6102,7 +6095,7 @@ popover.emoji-picker {
 
 .emoji-toolbar {
 	padding: 0;
-	border-spacing: $space-size / 2;
+	padding: 0 $space-size / 2;
 	border-top: 1px solid $divider;
 	background: none;
 }
@@ -6134,7 +6127,7 @@ emoji-completion-row {
 	padding: 0 $space-size * 2;
 
 	> box {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 		padding: 2px $space-size;
 	}
 

@@ -297,7 +297,7 @@ toast {
 	margin: $space-size * 2;
 	margin-bottom: $space-size * 4;
 	border-radius: $circular-radius;
-	border-spacing: $space-size;
+	padding: 0 $space-size;
 	padding: $space-size;
 	box-shadow:
 		$shadow-z6,
@@ -356,7 +356,7 @@ viewswitcher {
 				font-size: 0.75rem;
 				padding-top: $space-size;
 				padding-bottom: $space-size - 2px;
-				border-spacing: $space-size - 2px;
+				padding: 0 $space-size - 2px;
 
 				> stack > label {
 					padding-left: $space-size;
@@ -366,7 +366,6 @@ viewswitcher {
 
 			&.wide {
 				padding: 2px $space-size * 2;
-				border-spacing: $space-size;
 			}
 		}
 	}
@@ -384,7 +383,7 @@ viewswitcherbar actionbar > revealer > box {
 			&.narrow {
 				padding-top: $space-size / 2 + 2px;
 				padding-bottom: $space-size / 2 - 2px;
-				border-spacing: 0;
+				padding: 0;
 			}
 		}
 	}
@@ -408,7 +407,7 @@ viewswitchertitle {
 					&.narrow {
 						padding-top: 0;
 						padding-bottom: 0;
-						border-spacing: 0;
+						padding: 0;
 					}
 				}
 			}
@@ -464,7 +463,7 @@ indicatorbin {
 // preferencespage
 preferencespage > scrolledwindow > viewport > clamp > box {
 	margin: $space-size * 4 $space-size * 2;
-	border-spacing: $space-size * 4;
+	padding: 0 $space-size * 4;
 }
 
 preferencesgroup > box {
@@ -475,7 +474,7 @@ preferencesgroup > box {
 
 	&,
 	.labels {
-		border-spacing: $space-size;
+		padding: 0 $space-size;
 	}
 
 	> box.header:not(.single-line) {
@@ -621,11 +620,11 @@ window.about {
 	.main-page {
 		> viewport > clamp > box {
 			margin: $space-size * 2;
-			border-spacing: $space-size;
+			padding: 0 $space-size;
 
 			> box {
 				margin-top: $space-size * 3;
-				border-spacing: $space-size * 3;
+				padding: 0 $space-size * 3;
 				margin-bottom: $space-size;
 			}
 		}
@@ -641,7 +640,7 @@ window.about {
 	.subpage {
 		> viewport > clamp > box {
 			margin: $space-size * 3 $space-size * 2;
-			border-spacing: $space-size * 3;
+			padding: 0 $space-size * 3;
 		}
 
 		> clamp > textview {
@@ -655,10 +654,10 @@ window.about {
 statuspage {
 	> scrolledwindow > viewport > box {
 		margin: $space-size * 6 $space-size * 2;
-		border-spacing: $space-size * 6;
+		padding: 0 $space-size * 6;
 
 		> clamp > box {
-			border-spacing: $space-size * 2;
+			padding: 0 $space-size * 2;
 
 			> .icon {
 				-gtk-icon-size: 128px;
@@ -678,7 +677,7 @@ statuspage {
 
 	&.compact > scrolledwindow > viewport > box {
 		margin: $space-size * 4 $space-size * 2;
-		border-spacing: $space-size * 4;
+		padding: 0 $space-size * 4;
 
 		> clamp > box {
 			> .icon {
