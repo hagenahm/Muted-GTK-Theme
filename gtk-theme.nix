@@ -12,13 +12,14 @@ assert pkgs.lib.elem colorTweak [ "-Soft" "-Medium" "" ];
 
 let
   thumbnailColor = if color == "-Light" then "" else "-Dark";
+  themeName = "Muted${color}${subcolor}${colorTweak}";
 in
 
 pkgs.stdenvNoCC.mkDerivation {
   pname = "Muted-GTK";
   version = "0.1";
 
-  src = ./gtk-template;
+  src = ./.;
 
   nativeBuildInputs = [
     pkgs.sassc
@@ -35,13 +36,13 @@ pkgs.stdenvNoCC.mkDerivation {
     # Index Theme File
     echo "Type=X-GNOME-Metatheme" >> build/index.theme
     echo "[Desktop Entry]" >> build/index.theme
-    echo "Name=Muted_Theme${color}${subcolor}${colorTweak}" >> build/index.theme
+    echo "Name=${themeName}" >> build/index.theme
     echo "Comment=Gtk+ design for that paper-like look" >> build/index.theme
     echo "Encoding=UTF-8" >> build/index.theme
     echo "" >> build/index.theme
     echo "[X-GNOME-Metatheme]" >> build/index.theme
-    echo "GtkTheme=${color}${subcolor}${colorTweak}" >> build/index.theme
-    echo "MetacityTheme=${color}${subcolor}${colorTweak}" >> build/index.theme
+    echo "GtkTheme=${themeName}" >> build/index.theme
+    echo "MetacityTheme=${themeName}" >> build/index.theme
     echo "IconTheme=Tela-circle${color}" >> build/index.theme
     echo "CursorTheme=Muted-cursors" >> build/index.theme
     echo "ButtonLayout=close,minimize,maximize:menu" >> build/index.theme
@@ -65,13 +66,12 @@ pkgs.stdenvNoCC.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p "$out/share/themes/Muted/gtk-3.0" "$out/share/themes/Muted/gtk-4.0"
+    mkdir -p "$out/share/themes/${themeName}/gtk-3.0" "$out/share/themes/${themeName}/gtk-4.0"
     
-    cp -r build/gtk-4.0/* "$out/share/themes/Muted/gtk-4.0/"
-    cp -r build/gtk-3.0/* "$out/share/themes/Muted/gtk-3.0/"
+    cp -r build/gtk-4.0/* "$out/share/themes/${themeName}/gtk-4.0/"
+    cp -r build/gtk-3.0/* "$out/share/themes/${themeName}/gtk-3.0/"
+    cp build/index.theme "$out/share/themes/${themeName}/index.theme"
     
     runHook postInstall
   '';
 }
-
-#}
